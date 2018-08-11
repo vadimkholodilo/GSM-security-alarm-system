@@ -18,13 +18,14 @@ int notified = 0;
 volatile boolean opened = 0; // Эта переменная будет изменена по внешнему прерыванию от геркона
 volatile boolean movement = 0; // Эта переменная будет изменена по внешнему прерыванию от датчика движения
 const int DOOR1 = 2; // Пин, на котором находится геркон, отвечающий за 1-ую дверь
-const int DOORUSUALSTATE = HIGH; // Обычно на всех пинах дверей должна быть единица
+const int DOORUSUALSTATE = LOW; // Обычно на всех пинах дверей должна быть единица
 const int MOVEMENTSENCERUSUALSTATE = LOW;
 const int RELAY = 4;
 int door1State; // Сигнал на пине, отвечающем за первую дверь
 int movementSencerState;
 void setup() {
 pinMode(DOOR1, INPUT);
+digitalWrite(DOOR1, HIGH);
 	pinMode(MOVEMENTSENCER, INPUT);
 	digitalWrite(MOVEMENTSENCER, LOW);
 	pinMode(RELAY, OUTPUT);
